@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TEST</title>
+</head>
+
+<body>
+    <table style="border: 1px solid;">
+        <thead>
+            <tr>
+                <th style="text-align: left;"> COL0</th>
+                <th style="text-align: left;"> COL1</th>
+                <th style="text-align: left;"> COL2</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td> <input></td>
+                <td> <input></td>
+                <td> <input></td>
+                <td><button onclick="add()">ADD</button></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        alert("Hola Mundo!")
+        window.onload = () => {
+            clear()
+        }
+
+        function add() {
+
+            var tbody = document.getElementsByTagName("tbody")[0]
+            var row = tbody.insertRow()
+            var cell = row.insertCell()
+            cell.innerHTML = document.getElementsByTagName("input")[0].value
+            cell = row.insertCell()
+            cell.innerHTML = document.getElementsByTagName("input")[1].value
+            cell = row.insertCell()
+            cell.innerHTML = document.getElementsByTagName("input")[2].value
+            cell = row.insertCell()
+
+            clear()
+        }
+
+        function clear() {
+            document.getElementsByTagName("input")[0].value = ''
+            document.getElementsByTagName("input")[1].value = ''
+            document.getElementsByTagName("input")[2].value = ''
+            document.getElementsByTagName("input")[0].focus()
+        }
+    </script>
+</body>
+
+</html>
